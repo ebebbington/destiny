@@ -7,8 +7,10 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "deno run --allow-read=src/mod.ts --unstable console/create_dist.ts",
-    "watch": "deno run --allow-read=src/mod.ts --unstable console/create_dist.ts --watch"
+    "compile": "deno run --allow-read=. --unstable console/create_dist.ts",
+    "watch": "deno run --allow-read=. --unstable console/create_dist.ts --watch",
+    "fmt": "deno fmt --check --ignore=dist",
+    "lint": "deno lint --unstable --ignore=dist"
   },
   "keywords": [],
   "repository": "https://github.com/0kku/destiny",
