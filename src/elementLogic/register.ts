@@ -1,6 +1,6 @@
-import { pseudoRandomIdGenerator } from "../utils/id.js";
-import { pascalToKebab } from "../utils/pascalToKebab.js";
-import type { DestinyElement } from "./DestinyElement.js";
+import { pseudoRandomIdGenerator } from "../utils/id.ts";
+import { pascalToKebab } from "../utils/pascalToKebab.ts";
+import type { DestinyElement } from "./DestinyElement.ts";
 
 const pseudoRandomId = pseudoRandomIdGenerator();
 

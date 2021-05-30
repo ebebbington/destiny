@@ -1,4 +1,4 @@
-import { DestinyElement, xml, reactive } from "/dist/mod.js";
+import { DestinyElement, xml, reactive } from "../../mod.ts";
 
 const randomColor = () => (
   "#" + 

@@ -2,7 +2,7 @@
  * This module is currently not being used at all. It will be reworked entirely in the near future.
  */
 
-import { ReactivePrimitive } from "../../mod.js";
+import { ReactivePrimitive } from "../../mod.ts";
 
 type TReactiveArrayCallback<T, R = unknown> = (
   index: number,

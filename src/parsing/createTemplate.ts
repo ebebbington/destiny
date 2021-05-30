@@ -1,8 +1,8 @@
-import { parseString } from "./parseString.js";
-import { resolveSlots } from "./resolveSlots.js";
-import { isDestinyElement } from "../elementLogic/isDestinyElement.js";
-import { DestinyFallback } from "../elementLogic/DestinyFallback.js";
-import type { TParseResult } from "./TParseResult.js";
+import { parseString } from "./parseString.ts";
+import { resolveSlots } from "./resolveSlots.ts";
+import { isDestinyElement } from "../elementLogic/isDestinyElement.ts";
+import { DestinyFallback } from "../elementLogic/DestinyFallback.ts";
+import type { TParseResult } from "./TParseResult.ts";
 
 /**
  * Parses and processes a `TemplateStringsArray` into a `DocumentFragment`.

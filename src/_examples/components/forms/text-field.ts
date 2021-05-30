@@ -1,4 +1,4 @@
-import { DestinyElement, xml, Ref } from "/dist/mod.js";
+import { DestinyElement, xml, Ref } from "../../../mod.ts";
 
 /**
  * An example of a component that forwards its props to a child.

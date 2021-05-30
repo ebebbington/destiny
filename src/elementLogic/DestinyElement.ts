@@ -1,9 +1,9 @@
-import { register, xml } from "../mod.js";
-import { deferredElements } from "../parsing/deferredElements.js";
-import { assignElementData } from "../parsing/hookSlotsUp/hookAttributeSlotsUp/elementData/_assignElementData.js";
-import type { Ref, RefPromise } from "./Ref.js";
-import type { Renderable } from "../parsing/Renderable";
-import type { Slot } from "../parsing/Slot.js";
+import { register, xml } from "../mod.ts";
+import { deferredElements } from "../parsing/deferredElements.ts";
+import { assignElementData } from "../parsing/hookSlotsUp/hookAttributeSlotsUp/elementData/_assignElementData.ts";
+import type { Ref, RefPromise } from "./Ref.ts";
+import type { Renderable } from "../parsing/Renderable.ts";
+import type { Slot } from "../parsing/Slot.ts";
 
 // @ts-ignore I don't know how to describe this type correctly
 // eslint-disable-next-line

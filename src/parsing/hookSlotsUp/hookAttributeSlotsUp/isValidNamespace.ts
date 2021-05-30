@@ -1,4 +1,4 @@
-import type { TNamespace } from "./TNamespace.js";
+import type { TNamespace } from "./TNamespace.ts";
 
 export const validNamespaces = ["attribute", "prop", "call", "on", "destiny"] as const;
 

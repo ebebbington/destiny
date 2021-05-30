@@ -1,4 +1,4 @@
-import { ReactivePrimitive } from "../../../mod.js";
+import { ReactivePrimitive } from "../../../mod.ts";
 
 export function resolveAttributeValue (
   val: Array<{

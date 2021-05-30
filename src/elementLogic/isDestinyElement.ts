@@ -1,4 +1,4 @@
-import { DestinyElement } from "./DestinyElement.js";
+import { DestinyElement } from "./DestinyElement.ts";
 
 export function isDestinyElement (
   input: unknown,

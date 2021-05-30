@@ -1,5 +1,5 @@
-import { DestinyElement, xml } from "/dist/mod.js";
-import type { TReactiveObject } from "/dist/mod.js";
+import { DestinyElement, xml } from "../../../mod.ts";
+import type { TReactiveObject } from "../../../mod.ts";
 
 export class TaskItem extends DestinyElement<{
   item: TReactiveObject<{

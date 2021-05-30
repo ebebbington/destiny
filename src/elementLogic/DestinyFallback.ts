@@ -1,5 +1,5 @@
-import { isDestinyElement } from "./isDestinyElement.js";
-import { xml, Ref, DestinyElement } from "../mod.js";
+import { isDestinyElement } from "./isDestinyElement.ts";
+import { xml, Ref, DestinyElement } from "../mod.ts";
 
 export class DestinyFallback extends DestinyElement {
   static captureProps = true;

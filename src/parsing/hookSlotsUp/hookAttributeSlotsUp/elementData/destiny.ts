@@ -1,7 +1,7 @@
-import { destinyOut } from "./destinyOut.js";
-import { destinyIn } from "./destinyIn.js";
-import { destinyRef } from "./destinyRef.js";
-import type { TElementData } from "../TElementData.js";
+import { destinyOut } from "./destinyOut.ts";
+import { destinyIn } from "./destinyIn.ts";
+import { destinyRef } from "./destinyRef.ts";
+import type { TElementData } from "../TElementData.ts";
 
 /**
  * Handler for destiny-namespaced attributes. See referenced methods for details.

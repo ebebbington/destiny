@@ -1,11 +1,11 @@
-import { ReactivePrimitive } from "../../mod.js";
-import { reactiveArrayProxyConfig } from "./reactiveArrayProxyConfig.js";
-import { makeNonPrimitiveItemsReactive } from "./makeNonPrimitiveItemsReactive.js";
-import { NotImplementedError } from "../../utils/NotImplementedError.js";
-import type { TReactiveArrayCallback } from "../types/IReactiveArrayCallback.js";
-import type { TArrayValueType } from "../types/IArrayValueType.js";
-import type { TReactiveEntity } from "../types/IReactiveEntity.js";
-import { updateFilteredArray } from "./updateFilteredArray.js";
+import { ReactivePrimitive } from "../../mod.ts";
+import { reactiveArrayProxyConfig } from "./reactiveArrayProxyConfig.ts";
+import { makeNonPrimitiveItemsReactive } from "./makeNonPrimitiveItemsReactive.ts";
+import { NotImplementedError } from "../../utils/NotImplementedError.ts";
+import type { TReactiveArrayCallback } from "../types/IReactiveArrayCallback.ts";
+import type { TArrayValueType } from "../types/IArrayValueType.ts";
+import type { TReactiveEntity } from "../types/IReactiveEntity.ts";
+import { updateFilteredArray } from "./updateFilteredArray.ts";
 
 type TArrayUpdateArguments<T> = [
   startEditingAt: number, 

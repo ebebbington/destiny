@@ -1,4 +1,4 @@
-import { DestinyElement, expression, xml } from "/dist/mod.js";
+import { DestinyElement, expression, xml } from "../../mod.ts";
 
 import { route, HashRouter } from "./hash-router.js";
 

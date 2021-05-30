@@ -1,7 +1,7 @@
-import { DestinyElement, xml, reactive } from "/dist/mod.js";
+import { DestinyElement, xml, reactive } from "../../../mod.ts";
 
-import { animateIn, animateOut } from "./animations.js";
-import { TaskItem } from "./task-item.js";
+import { animateIn, animateOut } from "./animations.ts";
+import { TaskItem } from "./task-item.ts";
 
 type TInputChangeEvent = InputEvent & {
   currentTarget: HTMLInputElement,

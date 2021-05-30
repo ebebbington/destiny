@@ -1,4 +1,4 @@
-import { DestinyElement, reactive, xml, ReactivePrimitive } from "/dist/mod.js";
+import { DestinyElement, reactive, xml, ReactivePrimitive } from "../../mod.ts";
 
 function getHashRoute (
   url: string,

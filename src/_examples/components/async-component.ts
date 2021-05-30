@@ -1,4 +1,4 @@
-import { DestinyElement, xml } from "/dist/mod.js";
+import { DestinyElement, xml } from "../../mod.ts";
 
 export class AsyncComponent extends DestinyElement {
   template = xml`

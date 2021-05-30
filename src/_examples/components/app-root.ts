@@ -1,4 +1,4 @@
-import { DestinyElement, xml } from "/dist/mod.js";
+import { DestinyElement, xml } from "../../mod.ts";
 
 import { TabView } from "./tab-view.js";
 

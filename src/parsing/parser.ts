@@ -1,6 +1,6 @@
-import { createTemplate } from "./createTemplate.js";
-import { TemplateResult } from "./TemplateResult.js";
-import type { TParseResult } from "./TParseResult";
+import { createTemplate } from "./createTemplate.ts";
+import { TemplateResult } from "./TemplateResult.ts";
+import type { TParseResult } from "./TParseResult.ts";
 
 /** Used to cache parsed `DocumentFragment`s so looped templates don't need to be reparsed on each iteration. */
 const templateCache = new WeakMap<

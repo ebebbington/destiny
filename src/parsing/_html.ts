@@ -1,5 +1,5 @@
-import { parser } from "./parser.js";
-import type { TemplateResult } from "./TemplateResult.js";
+import { parser } from "./parser.ts";
+import type { TemplateResult } from "./TemplateResult.ts";
 
 /**
  * Parses an HTML template into a `TemplateResult` and hooks up reactivity logic to keep the view synchronized with the state of the reactive items prived in the slots.

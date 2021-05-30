@@ -1,5 +1,5 @@
-import { ReactivePrimitive, ReactiveArray } from "../mod.js";
-import { isReactive } from "../typeChecks/isReactive.js";
+import { ReactivePrimitive, ReactiveArray } from "../mod.ts";
+import { isReactive } from "../typeChecks/isReactive.ts";
 
 type TExpressionBody<T = unknown> = (args: Array<unknown>) => T;
 const cache: WeakMap<TemplateStringsArray, TExpressionBody> = new WeakMap;

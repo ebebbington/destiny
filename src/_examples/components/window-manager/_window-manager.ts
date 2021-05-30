@@ -1,4 +1,4 @@
-import { DestinyElement, xml, reactive, ReactivePrimitive } from "/dist/mod.js";
+import { DestinyElement, xml, reactive, ReactivePrimitive } from "../../../mod.ts";
 
 import { Window } from "./window.js";
 import type { TWindow } from "./TWindow";

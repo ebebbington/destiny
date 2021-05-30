@@ -1,5 +1,5 @@
-import { doOrBind } from "../doOrBind.js";
-import type { TElementData } from "../TElementData.js";
+import { doOrBind } from "../doOrBind.ts";
+import type { TElementData } from "../TElementData.ts";
 
 /**
  * `call:<ElementMethod>` takes an array of arguments to be passed to
