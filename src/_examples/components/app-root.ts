@@ -1,6 +1,6 @@
 import { DestinyElement, xml } from "../../mod.ts";
 
-import { TabView } from "./tab-view.js";
+import { TabView } from "./tab-view.ts";
 
 export class AppRoot extends DestinyElement {
   template = xml/*html*/`

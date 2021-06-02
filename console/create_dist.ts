@@ -69,6 +69,7 @@ async function compile(file: string) {
     }
     return true;
   });
+  console.log(fileKeys)
 
   // Write file
   for (const filename of fileKeys) {

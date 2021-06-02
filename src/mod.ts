@@ -13,3 +13,6 @@ export type { TReactiveObject    } from "./reactive/types/IReactiveObject.ts";
 export type { TReactiveEntity    } from "./reactive/types/IReactiveEntity.ts";
 export type { TReactive          } from "./reactive/types/IReactive.ts";
 export type { TemplateResult     } from "./parsing/TemplateResult.ts";
+
+// Purely so we can compile the example dir into dist
+import "./_examples/main.ts"

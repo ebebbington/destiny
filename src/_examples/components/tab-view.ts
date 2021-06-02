@@ -1,6 +1,6 @@
 import { DestinyElement, expression, xml } from "../../mod.ts";
 
-import { route, HashRouter } from "./hash-router.js";
+import { route, HashRouter } from "./hash-router.ts";
 
 export class TabView extends DestinyElement {
   #tabs = [
