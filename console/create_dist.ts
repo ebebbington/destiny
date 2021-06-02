@@ -33,8 +33,8 @@ function checkDiagnostics(diagnostics: Deno.Diagnostic[]): void {
   }
 }
 
-async function compile(specificFile?: string) {
-  const source = specificFile ?? "./src/mod.ts";
+async function compile(file: string) {
+  const source = file;
 
   const { diagnostics, files } = await Deno.emit(source, {
     compilerOptions: {
@@ -72,7 +72,6 @@ async function compile(specificFile?: string) {
 
   // Write file
   for (const filename of fileKeys) {
-    const outputStr = files[filename];
     const outPath = filename.replace("src", "dist");
     if (outPath.endsWith(".ts.d.ts") || outPath.endsWith(".ts.js")) { // ensure directory(s) file is in, exists
       const pathSplit = outPath.split("/");
@@ -83,6 +82,17 @@ async function compile(specificFile?: string) {
         : parentDirOfFile; // because `ensureDirSync` will throw an error if the path is a file url on windows
       ensureDirSync(validPath);
     }
+
+    // Because imports inside the files are still using a .ts extension, we're going to make them use .js:
+    let outputStr = files[filename].replace(/import { ([a-zA-Z].*) } from "(.*)";/gm, (_str, importValues, fileImportedFrom) => {
+      const jsImport = fileImportedFrom.replace(".ts", ".js")
+      return `import { ${importValues} } from \"${jsImport}\";`
+    })
+    outputStr = files[filename].replace(/export { ([a-zA-Z].*) } from "(.*)";/gm, (_str, importValues, fileImportedFrom) => {
+      const jsImport = fileImportedFrom.replace(".ts", ".js")
+      return `export { ${importValues} } from \"${jsImport}\";`
+    })
+
     const validPath = Deno.build.os === "windows"
       ? fromFileUrlWin(outPath)
       : outPath; // Same again
@@ -94,7 +104,7 @@ async function compile(specificFile?: string) {
   console.log("Finished compilation");
 }
 
-await compile();
+await compile("./src/mod.ts");
 
 const args = Deno.args;
 if (args[0] === "--watch") {
