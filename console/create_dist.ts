@@ -8,12 +8,12 @@ function checkDiagnostics(diagnostics: Deno.Diagnostic[]): void {
     const diagnostic = diagnostics[0]; // we only really care about throwing the first error
     const filename = diagnostic.fileName;
     const start = diagnostic.start;
-    // @ts-ignore Deno tells us `messageText` does not exist on `messageChain`, but it 100% is (bug with deno)
     const messageText = diagnostic.messageText ??
+      // @ts-ignore Deno tells us `messageText` does not exist on `messageChain`, but it 100% is (bug with deno)
       diagnostic.messageChain!.messageText;
     const sourceLine = diagnostic.sourceLine;
-    // @ts-ignore Deno tells us `messageText` does not exist on `messageChain`, but it 100% is (bug with deno)
     const brief = diagnostic.messageChain
+      // @ts-ignore Deno tells us `messageText` does not exist on `messageChain`, but it 100% is (bug with deno)
       ? diagnostic.messageChain.next![0].messageText
       : "";
     if (filename && start) {
@@ -65,9 +65,6 @@ async function compile(specificFile?: string) {
 
   const fileKeys = Object.keys(files).filter((filename) => {
     if (filename.includes(".map")) {
-      return false;
-    }
-    if (filename.includes("_examples/")) {
       return false;
     }
     return true;
