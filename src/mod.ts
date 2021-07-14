@@ -12,6 +12,7 @@ export { register                  } from "./componentLogic/register.ts";
 export { Ref                       } from "./componentLogic/Ref.ts";
 export { BaseRouter                } from "./componentLogic/BaseRouter.ts"
 export { Router                    } from "./componentLogic/Router.ts"
+export { HashRouter                } from "./componentLogic/HashRouter.ts"
 export { match                     } from "./componentLogic/match.ts"
 export { classNames                } from "./reactive/classNames.ts";
 export { css                       } from "./styling/css.ts";

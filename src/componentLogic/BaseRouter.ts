@@ -4,11 +4,11 @@ export type Routes = Map<string, { content: string, exact?: boolean }>
 
 export class BaseRouter extends Component {
     protected render(data: { content: string, matches: Record<string, string>}) {
-      console.log('gonna render comp with:')
-      console.log(data)
+      // TODO(edward/okku): Currently theres a bug with the below props aren't being passed into the component, but once that is fixed, passing path params should also work
+      // TODO(edward/okku): Once we can use a spreadoperator eg prop:destinySlot=${...obj}, we shpuld probably go for that?
         return xml`
         <${import(data.content)}
-          prop:pathparams=${data.matches}
+          prop:pathOarams=${data.matches}
           prop:fallback=${xml`Loading…`}
           prop:catch=${(err: Error) => xml`
             Error loading page: ${err.message}`

@@ -1,4 +1,4 @@
-import { reactive, html, computed, BaseRouter } from "../../mod.ts";
+import { reactive, html, computed, BaseRouter } from "../mod.ts";
 import type { Routes } from "./BaseRouter.ts"
 
 function getHashRoute (

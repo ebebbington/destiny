@@ -1,4 +1,4 @@
-import { Component, xml } from "../src/mod.ts";
+import { Component, xml, HashRouter } from "../src/mod.ts";
 
 export default interface Drash {
     pathParams: {
@@ -6,7 +6,9 @@ export default interface Drash {
     }
 }
 export default class Drash extends Component {
-    connectedCallback () { console.log(Object.keys(this))}
 
-    override template = xml`<p>drash</p>`
+
+    override template = xml`
+      <p>drash</p>
+    `
 }
