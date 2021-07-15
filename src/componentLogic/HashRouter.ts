@@ -13,6 +13,8 @@ window.addEventListener("hashchange", e => {
   route.value = getHashRoute(e.newURL);
 });
 
+// TODO :: Finish this by doing exaCTLY WHAT rOUTER DID
+
 export interface HashRouter {
   routes: Routes
 }
