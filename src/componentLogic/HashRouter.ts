@@ -25,9 +25,11 @@ export class HashRouter extends BaseRouter {
     </slot>
   `;
 
+  #routes: Routes = this.assignRoutes();
+
   override template = computed(() => {
     // If we found an exact match, render that
-    const result = this.tryMatchRoute(this.routes, route.value)
+    const result = this.tryMatchRoute(this.#routes, route.value)
     return (
       result
       ? this.render(result)

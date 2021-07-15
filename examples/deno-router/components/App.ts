@@ -1,4 +1,4 @@
-import { Component, register, xml, Router, Route } from "../src/mod.ts";
+import { Component, register, xml, Router, Route, HashRouter } from "../src/mod.ts";
 // has router
 class AppRoot extends Component {
     override template = xml`
@@ -7,6 +7,10 @@ class AppRoot extends Component {
         <${Route} prop:path=${"/drash/:version?"} prop:content=${"/components/drash.js"}></${Route}>
       </${Router}>
     `;
+    // <${HashRouter}>
+    //   <${Route} prop:path=${"/hello"} prop:content=${"/components/hello.js"}></${Route}>
+    //   <${Route} prop:path=${"/bye"} prop:content=${"/components/bye.js"}></${Route}>
+    // </${HashRouter}>
 }
 
 

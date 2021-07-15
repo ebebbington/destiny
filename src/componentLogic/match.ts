@@ -1,3 +1,6 @@
+// All of this code was taken from https://github.com/pillarjs/path-to-regexp/blob/master/src/index.ts.
+// We removed a whole bunch of logic that wasn't relevent to what we needed
+
 /**
  * Tokenizer results.
  */

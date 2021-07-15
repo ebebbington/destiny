@@ -1,3 +1,5 @@
 import "./components/landing.ts"
 import "./components/drash.ts"
+import "./components/hello.ts"
+import "./components/bye.ts"
 import "./components/App.ts"
