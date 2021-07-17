@@ -3,6 +3,8 @@ import { getElementData } from "../mod.ts"
 
 export type Routes = Map<string, { content: string, exact: boolean }>
 
+const cachedMatches = reactive(new Map())
+
 export class BaseRouter extends Component {
   protected assignRoutes() {
     const map = new Map()
@@ -36,23 +38,53 @@ export class BaseRouter extends Component {
       }
 
     protected tryMatchRoute(routes: Routes, requestUri: string): undefined | { content: string, matches: Record<string, string>} {
-        let routeInfo = routes.get(requestUri);
-        if (routeInfo) {
+        // check cache
+        const matchFromCache = cachedMatches.get(requestUri)
+        if (matchFromCache) {
+          return {
+            content: matchFromCache.content,
+            matches: matchFromCache.matches
+          }
+        }
+        // match route exactly
+        {
+          const routeInfo = routes.get(requestUri);
+          if (routeInfo) {
+            if (!matchFromCache) {
+              cachedMatches.set(requestUri, {
+                content: routeInfo.content,
+                matches: {}
+              })
+            }
             return {
               content: routeInfo.content,
               matches: {}
             }
-        }
-        // Otherwise try match against all routes
-        let matches = {}
-        for (const routeUri of routes.keys()) {
-          matches = match(routeUri)(requestUri)
-          if (matches !== false) {
-              // this route matches :)
-              routeInfo = routes.get(routeUri)
-              break
           }
         }
-        return routeInfo ? { content: routeInfo.content, matches: matches } : undefined
+        {
+          // Otherwise try match against all routes
+          const matches = {}
+          let routeInfo;
+          for (const routeUri of routes.keys()) {
+            matches = match(routeUri)(requestUri)
+            if (matches !== false) {
+                // this route matches :)
+                routeInfo = routes.get(routeUri)
+                cachedMatches.set(requestUri, {
+                  content: routeInfo.content,
+                  matches
+                })
+                break
+            }
+          }
+          if (routeInfo) {
+            return {
+              content: routeInfo.content,
+              matches
+            }
+          }
+        }
+        return undefined
     }
 }
